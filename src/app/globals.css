@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fffaf5;
   --foreground: #171717;
+  --padding-container: 2.778vw;
+  --scrollbar-width: 10px;
 }
 
 @theme inline {
@@ -14,8 +16,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fffaf5;
+    --foreground: #171717;
   }
 }
 
@@ -23,4 +25,77 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  border-radius: 1.04vw;
+  aspect-ratio: unset;
+  border: 2px solid rgb(255, 250, 245);
+}
+
+.menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #171717;
+  border-radius: 1.04vw;
+  aspect-ratio: unset;
+  height: calc(
+    (100vw - 2 * var(--padding-container) - var(--scrollbar-width)) * 2 / 24
+  );
+  width: calc(
+    (100vw - 2 * var(--padding-container) - var(--scrollbar-width)) * 4 / 24
+  );
+  z-index: 20;
+}
+.menu-button:hover {
+  background-color: black;
+  border: 1px solid #fffaf5;
+  color: white;
+}
+
+.menu-button svg {
+  width: 0.69vw;
+  height: 0.69vw;
+  fill: #171717 !important;
+  stroke: #171717;
+  color: #171717;
+}
+
+.pointer {
+  --size: 160vh;
+  position: absolute;
+  z-index: 30;
+  background-color: black;
+  top: calc(50% - 0.5 * var(--size));
+  left: calc(-0.66 * var(--size));
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  border: 2px solid rgb(255, 250, 245);
+  scale: 1;
+}
+
+.pointer svg {
+  enable-background: new 0 0 1450.3 1447.6;
+}
+
+.pointer svg path {
+  fill: none;
+  stroke: #fffaf5;
+  stroke-width: 3;
+}
+
+.text-wrapper {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.menu-item {
+  font-weight: 300;
+  font-size: 6vw;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: rgb(255, 250, 245);
+  transform: skew(45deg);
 }
