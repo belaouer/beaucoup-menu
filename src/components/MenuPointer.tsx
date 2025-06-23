@@ -42,7 +42,7 @@ const MenuPointer = ({
   }, [isOpen]);
 
   return (
-    <div className="pointer" ref={pointerWrapperRef}>
+    <div className="pointer hidden xl:block" ref={pointerWrapperRef}>
       <svg
         ref={pointerRef}
         version="1.1"
